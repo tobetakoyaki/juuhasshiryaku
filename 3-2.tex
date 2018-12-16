@@ -1,0 +1,226 @@
+\documentclass[a4j,twocolumn]{tarticle}
+
+\usepackage{sfkanbun}
+\usepackage{otf}
+\usepackage[dvipdfmx]{graphicx} %図の挿入
+\usepackage{url}
+\usepackage{setspace} %行間の部分的変更
+
+\setlength{\columnseprule}{0.1pt}
+
+\def\ninojiten{%
+　\kern-1zw%全角空白
+\raise.2zw\hbox to1zw{\smash{\kern-.1zw\hbox to0zw{%
+{\scriptsize ゝ\kern-.5zw\smash{\raise.1zh\hbox{ヽ}}}\hss}}\hss}%
+\kern-1zw 　%全角空白
+}
+\def\:{\rotatebox[origin=c]{-90}{：}}
+\def\;{\rotatebox[origin=c]{-90}{；}}
+
+\newcommand{\ten}[2]{\kundoku{#1}{}{}{}(#2)}
+\newcommand{\okuri}[3][]{\kundoku{#2}{#1}{#3}{}}
+\newcommand{\furi}[2]{\kundoku{#1}{#2}{}{}}
+\newcommand{\re}[3][]{\kundoku{#2}{#1}{#3}{レ}}
+\newcommand{\ichire}[3][]{\kundoku{#2}{#1}{#3}{\ichireten}}
+\newcommand{\ichi}[3][]{\kundoku{#2}{#1}{#3}{一}}
+\renewcommand{\ni}[3][]{\kundoku{#2}{#1}{#3}{二}}
+\newcommand{\san}[3][]{\kundoku{#2}{#1}{#3}{三}}
+\newcommand{\ue}[3][]{\kundoku{#2}{#1}{#3}{上}}
+\newcommand{\shita}[3][]{\kundoku{#2}{#1}{#3}{下}}
+\newcommand{\uere}[3][]{\kundoku{#2}{#1}{#3}{\uereten}}
+\newcommand{\NI}[3][]{\kundoku{#2}{#1}{#3}{\ongofu{二}{---}}}
+\newcommand{\SAN}[3][]{\kundoku{#2}{#1}{#3}{\ongofu{三}{--}}}
+
+%\newcommand{\LRkanji}[2]{\scalebox{0.5}[1]{\makebox[2zw]{#1\hspace{-0.1zw}#2}}}
+\newcommand{\chuu}[1]{\begin{quote} \footnotesize{#1} \end{quote}}
+\newcommand{\yaku}[1]{\begin{quote} \small{\textgt{訳}#1} \end{quote}}
+\newcommand{\nw}[1]{{ \bf #1 }}
+\newcommand{\kin}{\raisebox{-0.5zw}{\rotatebox{90}{\includegraphics[width=1zw]{Kin_2.pdf}}}} %出力できない文字の埋め込み
+\newcommand{\kingt}{\raisebox{-0.5zw}{\rotatebox{90}{\includegraphics[width=1zw]{Kin_1.pdf}}}} %出力できない文字の埋め込み
+
+\newcounter{kanumber}
+\setcounter{kanumber}{0}
+
+%\newcounter{sentencenumber}
+%\setcounter{sentencenumber}{0}
+%\newcommand{\numbun}{\refstepcounter{sentencenumber}\noindent\textsf{\rensuji{\thesentencenumber}}\hspace{1zw}}
+
+%入力参考
+%\kundoku{字}{よみ}{送り}{訓点}<左送り>(句読点)
+
+\newenvironment{xia}[1]{\refstepcounter{kanumber}第\rensuji{\thekanumber}代\nw{#1} \begin{itemize}\vspace{-0.5\baselineskip}}{\vspace{-0.5\baselineskip}\end{itemize}}
+
+\begin{document}
+\begin{center}{\LARGE {\bf 十八史略ゼミ 発表補足資料}}\\夏\end{center}
+\vspace{-\baselineskip}
+\begin{flushright}
+第一版　\rensuji{2018}年\rensuji{12}月\rensuji{23}日\\
+文責\:ト部蛸焼
+\end{flushright}
+\vspace{-1.5\baselineskip}
+
+\section{本文の概略}
+\begin{xia}{禹}
+\item 鯀の子、\UTF{9853}\UTF{980A}の孫。
+\item 鯀の治水事業を後継し成功。その功績により舜を後継。
+\item 一饋十起。
+\item 罪人を見て自身の徳を顧みる。
+\item 酒を作った儀狄を忌避する。
+\item 鼎を作って鬼神をもてなす。
+\item 黄竜にも毅然と振る舞う。
+\end{xia}
+
+\begin{xia}{啓}
+\item 禹の子。（初の世襲\; 益との後継者問題）
+\item 甘誓 （\rensuji{cf.}本稿\bf{\ref{甘誓}}）
+\end{xia}
+
+\begin{xia}{太康}
+\item 啓の子。
+\item 放蕩のせいで后\UTF{7FBF}にやめさせられる。
+\end{xia}
+
+\begin{xia}{仲康}
+\item 太康の弟。
+\item 后\UTF{7FBF}の傀儡政治。羲和の征伐。
+\end{xia}
+
+\begin{xia}{相}
+\item 仲康の子。
+\item 追放されて后\UTF{7FBF}の政権$\to$寒\UTF{6D5E}の奪権
+\end{xia}
+
+\begin{xia}{少康}
+\item 相の子。
+\item 旧臣の靡とともに寒\UTF{6D5E}を追放。王家の復権。
+\end{xia}
+
+\begin{xia}{杼}
+\item 少康の子。
+\end{xia}
+
+\begin{xia}{槐}
+\item 杼の子。
+\end{xia}
+
+\begin{xia}{芒}
+\item 槐の子。
+\end{xia}
+
+\begin{xia}{泄}
+\item 芒の子。
+\end{xia}
+
+\begin{xia}{不降}
+\item 泄の子。
+\end{xia}
+
+\begin{xia}{\UTF{6243}}
+\item 不降の弟。
+\end{xia}
+
+\begin{xia}{\kingt}
+\item \UTF{6243}の子。
+\end{xia}
+
+\begin{xia}{孔甲}
+\item \kin の子。
+\item 鬼神を好む。淫乱を極める。
+\item 劉累特製の竜の塩漬けをうましうましと食べて逃げられる。
+\end{xia}
+
+\begin{xia}{皐}
+\item 孔甲の子。
+\end{xia}
+
+\begin{xia}{発}
+\item 皐の子。
+\end{xia}
+
+\begin{xia}{履癸}
+\item 発の子。桀。貪虐。
+\item 末喜のための傾宮瑶台。
+\item 肉山脯林の宴会。
+\item 鳴条の戦い。（\rensuji{cf.}本稿\bf{\ref{鳴条}}）
+\end{xia}
+
+\section{甘誓\protect\footnote{甘誓は『書経』に収録されている。\cite{kansei}}}\label{甘誓}
+\okuri{大}{イニ}\ni{戦}{ヒ}于\ichi{甘}{ニ}(、)\okuri{乃}{チ}\ni{召}{ス}六\ichi{卿}{ヲ}(。)
+王\okuri{曰}{ハク}(、)
+「嗟、六事之人、予\NI{誓}{} \okuri{告}{ス}\ichi{汝}{ニ}(。)
+有扈氏\NI{威}{}\okuri{侮}{シ}五\ichi{行}{ヲ}(、)\NI{怠}{}\okuri{棄}{シ}三\ichi{正}{ヲ}(、)
+天\okuri[もつ]{用}{テ}\NI{勦}{}\okuri{絶}{ス}\okuri{其}{ノ}\ichi{命}{ヲ}(。)
+今予\okuri{惟}{レ}\NI{恭}{}\okuri{行}{ス}天之\ichi{罰}{ヲ}(。)
+左\re{不}{レバ}\ni[おさ]{攻}{メ}于\ichi{左}{ニ}(、)汝\re{不}{}\re{恭}{セ}\okuri{命}{ヲ}(。)
+右\re{不}{レバ}\ni[おさ]{攻}{メ}于\ichi{右}{ニ}(、)汝\re{不}{}\re{恭}{セ}\okuri{命}{ヲ}(。)
+御\ni{非}{ザレバ}\okuri{其}{ノ}馬之\ichi{正}{シキニ}(、)汝\re{不}{}\re{恭}{セ}\okuri{命}{ヲ}(。)
+\re{用}{フルハ}\okuri{命}{ヲ}(、)\ni{賞}{シ}于\ichi{祖}{ニ}(、)
+\re{弗}{ルハ}\re{用}{ヒ}\okuri{命}{ヲ}(、)\ni{戮}{ス}于\ichi{社}{ニ}(。)
+予\okuri{則}{チ}\NI{孥}{}\okuri{戮}{セント}\ichi{汝}{ヲ}(。)」
+
+\yaku{\cite{kansei-yaku}　夏の王、啓が、甘で大戦闘を開始しようとするに先だち、
+六卿たちを呼びよせて告げた。
+
+王はいった、
+
+「ああ、六事の人々よ。
+
+予は、神々に誓って、汝たちに告げるぞ。有扈氏がおぞましくも五行をないがしろにして、
+三正を破り棄てたので、天が有扈氏の国運を断絶したのだ。されば、今、予は天の刑罰を奉行しようとしているのだ。
+
+戦闘にあたり、汝たちの車左がその任務の射を怠るならば、それは汝たちが天の命令に従っていないのだ。
+車右がその任務の戈をふるうことを怠るならば、それは汝たちが天の命令に従っていないのだ。
+御者が馬の進退を誤るならば、それは汝たちが天の命令に従っていないのだ。
+
+この予が命令に従った、これを祖廟で賞するであろう。
+命令に従わなかった者は、これを社で罰するであろう。
+予はさらに汝たちを奴隷におとして辱めるであろう。」と。}
+
+
+\section{鳴条の戦い\protect\footnote{この文章は『史記』の「夏本紀」から抜粋した。\cite{meijou}}} \label{鳴条}
+
+
+孔甲\okuri{崩}{レ}(、)\okuri{子}{ノ}帝皐\okuri{立}{ツ}(。)
+帝皐\okuri{崩}{レ}(、)\okuri{子}{ノ}帝発\okuri{立}{ツ}(。)
+帝発\okuri{崩}{レ}(、)\okuri{子}{ノ}帝履癸\okuri{立}{チ}(、)
+\okuri{是}{ヲ}\re{為}{ス}\okuri{桀}{ト}(。)
+帝桀之時、
+\ni{自}{リシテ}孔甲以\ichi{来}{}而
+諸侯\re{多}{ク}\re[そむ]{畔}{クコト}\okuri{夏}{ニ}(、)
+桀\re{不}{シテ}\re{務}{メ}\okuri{徳}{ニ}而\NI{武}{}\okuri{傷}{シ}百\ichi{姓}{ヲ}(、)
+百姓\re{弗}{}\okuri{堪}{エ}(。)
+\okuri{乃}{チ}\re{召}{スモ}\okuri{湯}{ヲ}而\ni{囚}{ヘ}\okuri{之}{ヲ}夏\ichi{台}{ニ}(、)
+\okuri{已}{ニシテ}而\re{釈}{ス}\okuri{之}{ヲ}(。)
+湯\re{修}{メ}\okuri{徳}{ヲ}(、)諸侯皆\re{帰}{シ}\okuri{湯}{ニ}(、)
+湯\okuri{遂}{ニ}\re{率}{イテ}\okuri{兵}{ヲ}\okuri{以}{テ}\ni{伐}{ツ}夏\ichi{桀}{ヲ}(。)
+桀\ni[に]{走}{ゲ}鳴\ichi{条}{ニ}(、)\okuri{遂}{ニ}\okuri{放}{チテ}而\okuri{死}{ス}(。)
+桀\re{謂}{ヒテ}\okuri{人}{ニ}\okuri{曰}{ハク}(、)
+「吾\shita{悔}{ユ}\san{不}{}\okuri{遂}{ニ}\ni{殺}{サ}\okuri{湯}{ヲ}於夏\ichi{台}{ニ}(、)
+\uere{使}{ムルコトヲ}\re{至}{ラ}\okuri{此}{ニ}(。)」
+湯\okuri{乃}{チ}\ni{践}{ミ}天\okuri{子}{ノ}\ichi{位}{ヲ}(、)
+\ni{代}{ハリテ}夏\ichi{朝}{ニ}天\okuri{下}{ス}(。)
+湯\ni{封}{ジ}夏之\ichi{後}{ヲ}(、)\re{至}{ルマデ}\okuri{周}{ニ}\ni{封}{ズ}於\ichi{杞}{ニ}也。
+
+\yaku{\footnote{ト部訳}　孔甲は崩御し、（孔甲の）子の帝皐が帝位に就いた。
+帝皐は崩御し、（帝皐の）子の帝発が帝位に就いた。
+帝発は崩御し、（帝発の）子の帝履癸が帝位に就き、（死後）これを桀とした。
+桀の時代は、孔甲の時代以来、諸侯が夏王朝に背くことは多かったが、
+桀は徳に励まず多くの人々を武力で傷つけ（たので）、人々は我慢できなかった。
+そこで、湯を呼び（助けを求めたが）、（桀は）彼を夏台にとじこめ、
+しばらくすると彼を釈放した。
+湯は徳を修め、諸侯はみな湯に帰属した。
+湯はそのまま兵を率いて、夏の桀を攻めた。
+桀は鳴条に敗走し、そのまま追放されて死んだ。
+桀が人に言ったところでは、
+「私は湯を夏台に（捕らえたときに）そのまま殺してしまわず、
+このような（末路に）至らせてしまったことを後悔している。」と。
+湯はそのあと天子の位に就き、夏王朝に代わって天下をとった。
+湯は夏の後を封じ、周代に至るまで杞に都を置いた。}
+
+\begin{thebibliography}{9}
+\bibitem{kansei} 「尚書\:夏書\:甘誓 - 中國哲學書電子化計劃」、\url{https://ctext.org/shang-shu/speech-at-gan/zh} 、参照\:\rensuji{2018}年\rensuji{12}月\rensuji{6}日
+\bibitem{kansei-yaku} 赤塚忠，「中国古典文学大系 全\rensuji{60}巻 書経・易経（抄） 第\rensuji{1}巻」，平凡社，\rensuji{1974}
+\bibitem{meijou} 「史記\:書 - 中國哲學書電子化計劃」、\url{https://ctext.org/shiji/shu/zh} 、 参照\:\rensuji{2018}年\rensuji{12}月\rensuji{6}日
+\end{thebibliography}
+
+\end{document}
