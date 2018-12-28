@@ -1,2 +1,2 @@
-# juuhasshiryaku
+# 十八史略
 漢文ゼミの発表資料
