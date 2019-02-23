@@ -1,0 +1,328 @@
+\documentclass[a4j,landscape,twocolumn]{tarticle}
+
+\usepackage{sfkanbun} % 漢文訓点
+\usepackage{otf} % 利用文字の拡張
+\usepackage[dvipdfmx]{graphicx, xcolor} % 図の挿入
+%\usepackage{kyakuchu} % 脚註
+\usepackage{bounddvi} % 用紙の回転
+\usepackage{url} 
+\usepackage{setspace} %行間の部分的変更
+%\usepackage{color}
+%\usepackage{layout} % レイアウト表示
+
+% 用紙設定
+\textheight=750pt
+\textwidth=54zw
+%\handurawidth=50zw
+\marginparsep=3zw
+\headsep=-5pt
+\hoffset=-35pt
+%\setkyakuchuu%脚注領域の計算
+
+% 訓点定義
+\def\ninojiten{%
+　\kern-1zw%全角空白
+\raise.2zw\hbox to1zw{\smash{\kern-.1zw\hbox to0zw{\UTF{303B}}}}
+\kern-.5zw}
+
+\newcommand{\okuri}[3][]{\kundoku{#2}{#1}{#3}{}}
+\newcommand{\furi}[2]{\kundoku{#1}{#2}{}{}}
+\newcommand{\re}[3][]{\kundoku{#2}{#1}{#3}{レ }}
+\newcommand{\ichire}[3][]{\kundoku{#2}{#1}{#3}{\ichireten}}
+\newcommand{\ichi}[3][]{\kundoku{#2}{#1}{#3}{一}}
+\renewcommand{\ni}[3][]{\kundoku{#2}{#1}{#3}{二}}
+\newcommand{\san}[3][]{\kundoku{#2}{#1}{#3}{三}}
+\newcommand{\ue}[3][]{\kundoku{#2}{#1}{#3}{上}}
+\newcommand{\naka}[3][]{\kundoku{#2}{#1}{#3}{中}}
+\newcommand{\shita}[3][]{\kundoku{#2}{#1}{#3}{下}}
+\newcommand{\uere}[3][]{\kundoku{#2}{#1}{#3}{\uereten}}
+\newcommand{\NI}[3][]{\kundoku{#2}{#1}{#3}{\ongofu{二}{---}}}
+\newcommand{\SAN}[3][]{\kundoku{#2}{#1}{#3}{\ongofu{三}{--}}}
+
+% 文章書式定義
+\newcommand{\midashi}[1]{\noindent \textbf{#1}}
+\newcommand{\nw}[1]{\textbf{#1}\hspace{1zw}}
+\newcommand{\sukima}{\vspace{\baselineskip}}
+%\newcounter{numofchuu}
+%\newcommand{\chuu}[1]{\refstepcounter{numofchuu} \LARGE{\thenumofchuu}}
+%\renewcommand{\thefootnote}{*\arabic{footnote}}
+\newcommand{\chuuskip}{\hspace{0.5zw}}
+\newcommand{\yaku}[1]{\begin{quote} \small{\textgt{訳}　#1} \end{quote}}
+\newcommand{\tref}[1]{\rensuji{\ref{#1}}}
+\renewcommand{\thesubsection}{\rensuji{\arabic{section}.\arabic{subsection}}}
+
+% 行間拡張
+\renewcommand{\baselinestretch}{1.3}
+
+% 字の合成
+%\newcommand{\LRkanji}[2]{\hbox{\raisebox{-0.31zh}{\scalebox{0.35}[1]{#1}}}\kern-0.35zw\hbox{\raisebox{0.14zh}{\scalebox{0.65}[1]{#2}}}\kern0.35zw}}
+\newcommand{\kanjisen}{\hbox{\raisebox{-0.31zh}{\scalebox{0.35}[1]{鳥}}}\kern-0.35zw\hbox{\raisebox{0.14zh}{\scalebox{0.65}[1]{旃}}}\kern0.35zw}
+
+\newcounter{sentence}[section]
+\newcommand{\sent}{\vspace{\baselineskip}\noindent\refstepcounter{sentence}\textbf{\rensuji{\thesentence}\rotatebox{90}{.}\quad}}
+
+\newcommand{\textred}[1]{\textcolor{red}{#1}}
+
+\makeatletter
+\def\@cite#1#2{\rensuji{[{#1\if@tempswa , #2\fi}]}}%%
+\def\@biblabel#1{\rensuji{[#1]}}%%%
+\renewcommand\kasen[1]{%
+  \ifydir\underline{#1}%
+  \else\if@rotsw\underline{#1}\else
+    \setbox\z@\hbox{#1}\leavevmode\raise1.2zw 
+    \hbox to\z@{\vrule\@width\wd\z@ \@depth\z@ \@height.4\p@\hss}%
+    \box\z@
+\fi\fi}
+\makeatother
+
+\setlength{\columnseprule}{0.3mm}
+% 入力参考
+%\kundoku{字}{よみ}{送り}{訓点}<左送り>(句読点)
+
+\begin{document}
+\twocolumn[\begin{center}
+	\textbf{\LARGE 十八史略ゼミ 発表資料（文章編）}\\
+	宋・魯本紀
+\end{center}
+\begin{flushright}
+	文責　ト部蛸焼\\
+	第一版　\rensuji{2019}年\rensuji{2}月\rensuji{24}日
+\end{flushright}
+\vspace{\baselineskip}]
+
+\section{宋}
+
+\sent
+\okuri{宋}{ハ}子姓、\okuri{商}{ノ}\okuri{紂}{ノ}庶兄微子啓之\re{所}{}\okuri{封}{ゼラレシ}也。
+後世\ni{至}{リ}春\ichi{秋}{ニ}(、)\ni{有}{リ}\furi{襄}{じょう}\furi{公}{こう}\furi{茲}{じ}\okuri[ほ]{父}{トイフ}\ichi{者}{}(、)\re{欲}{シテ}\ni{覇}{タラント}諸\ichi{侯}{ニ}(、)\re{与}{}楚\okuri{戦}{フ}(。)
+\footnote{\nw{公子}諸侯の子。}公子\furi{目}{もく}\furi{夷}{い}(、)\okuri{請}{フ}\ni{及}{ビテ}\okuri{其}{ノ}\ichire{未}{ダ}<ルニ>\okuri{陣}{セ}\re{撃}{タント}\okuri{之}{ヲ}(。)
+公\okuri{曰}{ハク}(、)「君\okuri{子}{ハ}\re{不}{ト}\ni{困}{シメ}\okuri{人}{ヲ}於\footnote{\nw{阨}窮地。}\ichi{阨}{ニ}(。」)
+\okuri{遂}{ニ}\ni{為}{ル}\okuri{楚}{ノ}\ichire{所}{ト}\okuri{敗}{ル}(。)
+世\okuri{笑}{ヒテ}\okuri{以}{テ}\ni{為}{ス}宋襄之\ichi{仁}{ト}(。)
+
+\yaku{宋国は（周と異なる）子姓であり、商の紂の腹違いの兄である微子啓の封ぜられた場所である。後世、春秋時代に至って、襄公茲父という者がおり、彼は諸侯の旗頭になろうと思い、楚と戦った。諸侯の子である目夷が、楚がまだ陣営を布かないうちに攻撃することを願い出た。襄公は「君子は人を窮地に（乗じて）苦しめることはしない。」と言った。そのまま、（宋は）楚に負かされてしまった。世間の人はこれを宋襄之仁と言って笑った。}
+
+\sent
+\okuri{其}{ノ}後\ni{有}{リ}景\okuri{公}{トイフ}\ichi{者}{}(。)
+\furi{\UTF{7192}}{けい}\furi{惑}{こく}\okuri{嘗}{テ}\ni{以}{テ}\okuri{其}{ノ}\ichi{時}{ヲ}\re{守}{ル}\okuri{心}{ヲ}(。)
+\okuri{心}{ハ}宋之\footnote{\nw{分野}天の二十八宿を中国全体に配当した区分。}分\okuri{野}{ナリ}(。)
+公\re{憂}{フ}\okuri{之}{ヲ}(。)
+\footnote{\nw{司星}星を司る官職。}司星\furi{子}{し}\furi{韋}{い}\okuri{曰}{ハク}(、)「\re{可}{シト}\ni{移}{ス}於\footnote{\nw{相}宰相。}\ichi{相}{ニ}(。」)
+公\okuri{曰}{ハク}(、)「\okuri{相}{ハ}吾之\footnote{\nw{股肱}主君の手足となって働く頼りの家臣。}股\okuri{肱}{ナリト}(。」)
+\okuri{曰}{ハク}(、)「\re{可}{シト}\ni{移}{ス}於\ichi{民}{ニ}(。」)
+公\okuri{曰}{ハク}(、)「君\furi{者}{は}\footnote{\nw{待}頼りにする。}\re{待}{スト}\okuri{民}{ヲ}(。」)
+\okuri{曰}{ハク}(、)「\re{可}{シト}\ni{移}{ス}於\footnote{\nw{歳}その年の収穫。}\ichi{歳}{ニ}(。」)
+公\okuri{曰}{ハク}(、)「歳\okuri{饑}{ウレバ}民\okuri{困}{シム}(。)吾\okuri{誰}{ノ}\okuri{為}{ニカ}\okuri{君}{タルト}(。」)
+子韋\okuri{曰}{ハク}(、)「天\okuri{高}{クシテ}\chuuskip\footnote{\nw{聴卑}地上のことを聞いている。}\re{聴}{ク}\okuri{卑}{キヲ}(。)君\ni{有}{リ}\re{君}{タル}\okuri{人}{ニ}之言\ichi{三}{}(。)\re{宜}{シク}<シト>\re{有}{ル}\okuri{動}{クコト}(。」)
+\re{候}{スルニ}\okuri{之}{ヲ}(、)\okuri{果}{タシテ}\okuri{徙}{ルコト}一\okuri{度}{ナリ}(。)
+
+\yaku{（襄公）の後、景公という者がいた。かつて、火星が心宿の辺りに長い期間留まって動かなかった。心宿は中国の領土にあてはめると宋の位置にあたる。そのため、景公はこのことを憂えた。司星である子韋が「（不祥を）宰相に移されるのがよい。」と言った。景公は「宰相は私の手足となって働く頼りの家臣である（からそれはいけない）。」と言った。（子韋は）「（不祥を）民に移されるのがよい。」と言った。景公は「君主は民を頼りにする（のでそれはいけない）。」と言った。（子韋は）「その年の収穫の多さに移されるのがよい。」と言った。景公は「収穫が乏しければ民が苦しむ。私は誰の為の君主であるのか。（それはいけない。）」と言った。子韋は「天は高くにあって地上のことを聞いている。あなたには人の君主たる発言が三つあった。（火星の）位置はきっと動くに違いない。」と言った。火星を測候すると、\rensuji{0.986}度ほど移動していた。}
+
+\sent
+\ni{歴}{テ}数\ichi{世}{ヲ}(、)\ni{至}{ル}康王\ichi{偃}{ニ}(。)
+\re{有}{リ}雀、\re{生}{ム}\footnote{\nw{\kanjisen}鷹の一種。}\okuri{\kanjisen}{ヲ}(。)
+\re{占}{フ}\okuri{之}{ヲ}(。)
+\okuri{曰}{ハク}(、)\okuri{必}{ズ}\ni{覇}{タラント}天\ichi{下}{ニ}(。)
+偃\okuri{喜}{ビ}(、)\ni{敗}{リ}斉・楚・\ichi{魏}{ヲ}(、)\okuri[とも]{与}{ニ}\ni{為}{ル}敵\ichi{国}{ト}(。)
+偃淫\okuri{虐}{ナリ}(。)
+天\okuri{下}{ニ}\re{号}{シテ}\okuri{之}{ヲ}\ni{曰}{フ}桀\ichi{宋}{ト}(。)
+\okuri{周}{ノ}\furi{慎}{しん}\furi{\UTF{975A}}{せい}\okuri{王}{ノ}時、\okuri{斉}{ノ}\furi{\UTF{6E63}}{びん}王\ni{与}{}楚・\ichi{魏}{}\okuri{共}{ニ}\re{伐}{チ}\okuri{宋}{ヲ}(、)\re{滅}{ボシテ}\okuri{之}{ヲ}而\ni{分}{カツ}\okuri{其}{ノ}\ichi{地}{ヲ}(。)
+
+\yaku{（景公から）数世を経て、康王に至った。ある時、雀が鷹を生んだ。これを占うと、「（宋は）必ず天下に覇者となるだろう」という。偃（＝康王）は喜び、斉・楚・魏の三国を敗ったが、（そのせいで三国と）敵国になった。偃は淫虐であった。そのため、天下の人々は彼を桀宋と言った。周の慎\UTF{975A}王の時、斉の\UTF{6E63}王が楚・魏と共に宋を攻撃し、これを滅ぼしてその領土を分割した。}
+
+\section{\Large 魯・本紀}
+
+\sent
+\okuri{魯}{ハ}姫姓、周\okuri{公}{ノ}子\furi{伯}{はく}\furi{禽}{きん}之\re{所}{}\okuri{封}{ゼラレシ}也。
+周公\ni[おし]{誨}{フルニ}成\ichi{王}{ニ}(、)王\re{有}{レバ}\okuri{過}{チ}\okuri{則}{チ}\ni[むちう]{撻}{ツ}伯\ichi{禽}{ヲ}(。)
+伯禽\footnote{\nw{就封}任地へ行く。}\re{就}{ク}\okuri{封}{ニ}(。)
+公\re{戒}{メテ}\okuri{之}{ヲ}\okuri{曰}{ハク}(、)「\okuri{我}{ハ}文王之子、武王之\okuri{弟}{ニシテ}(、)今王之叔\okuri{父}{ナリ}(。)
+\okuri{然}{レドモ}\okuri{我}{ハ}一\okuri{沐}{ニ}\okuri{三}{タビ}\re{握}{リ}\okuri{髪}{ヲ}(、)一\okuri{飯}{ニ}\okuri{三}{タビ}\re{吐}{キ}\okuri{哺}{ヲ}(、)\okuri{起}{チテ}\okuri{以}{テ}\re{待}{スモ}\okuri{士}{ヲ}(、)\okuri{猶}{ホ}\re{恐}{ル}\ni{失}{ハンヲ}天\okuri{下}{ノ}賢\ichi{人}{ヲ}(。)
+\furi{子}{し}\re{之}{カバ}\okuri{魯}{ニ}(、)\okuri{慎}{ミテ}\ni{無}{カレト}\re{以}{テ}\okuri{国}{ヲ}\ichire{驕}{ルコト}\okuri{人}{ニ}(。」)
+
+\yaku{魯は（周と同じ）姫姓であり、周公の子の伯禽が封ぜられた場所である。周公は成王を教え諭すときに、成王に過ちがあれば（代わりに）伯禽を鞭で打って（間接的に成王を戒めた）。{\tiny 編註 かわいそう}\, 伯禽がその任地に行くとき、周公が彼を戒めて「私は文王の子であり武王の弟であり今王成王の叔父である。けれども、私は一たび髪を洗うごとに三回は髪を握り、一たび食事をするときに三回は口の中のものを吐き出し、立ち上がって（自分と面会したいと申し出る）賢士と応対していてもなお、天下の賢人を獲得し損ねることを危惧している。おまえが魯に行ったらば、よく気を付けて国を治めているからといって他人に驕りたかぶるようなことはしてはいけない。」と言った。}
+
+\sent
+太公\ni{封}{ゼラル}於\ichi{斉}{ニ}(。)
+五\okuri{月}{ニシテ}而\re[しら]{報}{ス}\okuri{政}{ヲ}(。)
+周公\okuri{曰}{ハク}(、)「\okuri{何}{ゾ}\okuri{疾}{キ}\okuri[や]{也}{ト}(。」)
+\okuri{曰}{ハク}(、)「吾\ni{簡}{ニシテ}\okuri{其}{ノ}君\okuri{臣}{ノ}\ichi{礼}{ヲ}(、)\ni{従}{フト}\okuri{其}{ノ}\ichi{俗}{ニ}(。」)
+伯禽\re{至}{リ}\okuri{魯}{ニ}(、)三\okuri{年}{ニシテ}而\re[しら]{報}{ス}\okuri{政}{ヲ}(。)
+周公\okuri{曰}{ハク}(、)「\okuri{何}{ゾ}\okuri{遅}{キ}\okuri[や]{也}{ト}(。」)
+\okuri{曰}{ハク}(、)「\ni{変}{ジ}\okuri{其}{ノ}\ichi{俗}{ヲ}(、)\ni{革}{メ}\okuri{其}{ノ}\ichi{礼}{ヲ}(、)\okuri{喪}{ハ}三\okuri{年}{ニシテ}\okuri{而}{シテ}\okuri{後}{ニ}\re{除}{クト}\okuri{之}{ヲ}(。」)
+周公\okuri{曰}{ハク}(、)「後世\okuri{其}{レ}北\okuri{面}{シテ}\re[つか]{事}{ヘン}\okuri{斉}{ニ}\furi{乎}{か}(。)
+\okuri{夫}{レ}政\re{不}{}\okuri{簡}{ナラ}\re{不}{レバ}\okuri{易}{ナラ}(、)民\re{不}{}\re{能}{ハ}\okuri{近}{ヅク}(。)
+平\okuri{易}{ニシテ}\re{近}{ヅクレバ}\okuri{民}{ヲ}(、)民\okuri{必}{ズ}\re{帰}{セント}\okuri{之}{ニ}(。」)
+周公\ni{問}{フ}太\ichi{公}{ニ}(、)「\okuri{何}{ヲ}\okuri{以}{テカ}\re{治}{ムルト}\okuri{斉}{ヲ}(。」)
+\okuri{曰}{ハク}(、)「\re{尊}{ビテ}\okuri{賢}{ヲ}而\footnote{\nw{尚}尊重する。}\chuuskip\re[たっと]{尚}{ブト}\okuri{功}{ヲ}(。」)
+周公\okuri{曰}{ハク}(、)「後世\okuri{必}{ズ}\ni{有}{ラント}簒弑之\ichi{臣}{}(。」)
+太公\ni{問}{フ}周\ichi{公}{ニ}(、)「\okuri{何}{ヲ}\okuri{以}{テカ}\re{治}{ムルト}\okuri{魯}{ヲ}(。」)
+\okuri{曰}{ハク}(、)「\re{尊}{ビテ}\okuri{賢}{ヲ}而\re{親}{シムト}\okuri{親}{ヲ}(。」)
+太公\okuri{曰}{ハク}(、)「\okuri{後}{ニ}\okuri[ようや]{\UTF{5BD6}}{ク}\okuri{弱}{カラント}矣。」
+
+\yaku{太公望は斉に封ぜられた。五か月で（周公に）政治を報告しに来た。周公が「どうしてこんなに（成果をあげるのが）早いのか。」と問うと、太公望は「私はその地域の君臣の間の礼を簡単にし、その地域の風俗に従ったからです。」と答えた。伯禽は魯に至って三年で（周公に）政治を報告しに来た。周公が「どうしてこんなに（成果をあげるのが）遅かったのか。」と問うと、伯禽は「その地域の風俗を変え、その地域の礼を改め、父母の喪は三年間で除くようにしました。」と答えた。周公は「後世、魯は北面して斉に仕えることになるであろう。そもそも政治は簡易なものでなければ、民は（その政治に）近しくなることはできない。（政治を）平易にして民を近づければ、民は必ず王に帰属するであろう」と言った。周公が太公望に「どうやって斉を治めているか」と問うと、太公望は「賢者と功績を挙げた者を尊重しています。」と答えた。周公は「後世、きっと君主を殺して政権を奪い取るような家臣がでてくるだろう。」と言った。太公望が周公に「（ではそなたは）どうやって魯を治めているのですか。」と問うと、周公は「賢者を尊重し、親族と親しくしている。」と答えた。太公望は「後世に至ってだんだんと国が衰弱していくでしょう。」と答えた。}
+
+\sent
+伯\okuri{禽}{ヨリ}十三\okuri{世}{ニシテ}而\ni{至}{ル}\furi{隠}{いん}\ichi[こう]{公}{ニ}(。)
+\ni{為}{ス}春秋之\ichi{始}{メト}(。)
+隠公之\okuri{弟}{ヲ}\ni{曰}{フ}\furi{桓}{かん}\ichi[こう]{公}{ト}(。)
+桓公之\okuri{子}{ハ}\furi{荘}{そう}\furi{公}{こう}(、)荘公\ni{有}{リ}庶弟三\ichi{人}{}(。)
+\ni{曰}{フ}\furi{慶}{けい}\ichi[ほ]{父}{ト}(。)\okuri{其}{ノ}\okuri{後}{ヲ}\ni{為}{ス}孟孫\ichi{氏}{ト}(。)
+\ni{曰}{フ}\furi{叔}{しゅく}\ichi[が]{牙}{ト}(。)\okuri{其}{ノ}\okuri{後}{ヲ}\ni{為}{ス}叔孫\ichi{氏}{ト}(。)
+\ni{曰}{フ}\furi{季}{き}\ichi[ゆう]{友}{ト}(。)\okuri{其}{ノ}\okuri{後}{ヲ}\ni{為}{ス}季孫\ichi{氏}{ト}(。)
+\okuri{是}{ヲ}\ni{為}{ス}三\ichi{桓}{ト}(。)世\ninojiten\footnote{\nw{執国命}国の命令権を握る。}\ni{執}{ル}国\ichi{命}{ヲ}(。)
+\ni{歴}{テ}\footnote{\nw{子班}本文では「子斑」であるが、この表記が一般的。}\chuuskip\furi{子}{し}\furi{班}{はん}・\furi{閔}{びん}\furi{公}{こう}・\furi{僖}{き}\furi{公}{こう}・\furi{文}{ぶん}\furi{公}{こう}・\furi{宣}{せん}\furi{公}{こう}・\furi{成}{せい}\furi{公}{こう}・\furi{襄}{じょう}\ichi[こう]{公}{ヲ}(、)\ni{至}{リ}\furi{昭}{しょう}\ichi[こう]{公}{ニ}(、)\ni{伐}{ツ}季\ichi{氏}{ヲ}(。)
+\footnote{\nw{三家}三桓。}\chuuskip\furi{三}{さん}\furi{家}{か}\okuri{共}{ニ}\re{伐}{ツ}\okuri{之}{ヲ}(。)公\ni{奔}{リ}\footnote{\nw{乾侯}晋の領内の地名。}\chuuskip\furi{乾}{かん}\ichi[こう]{侯}{ニ}(、)\okuri{以}{テ}\okuri{卒}{ス}(。)
+
+\yaku{伯禽から数えて十三世を経て隠公に至る。これが春秋時代のはじめである。隠公の弟を桓公といい、桓公の子を荘公といい、荘公には腹違いの弟が三人あった。（長兄を）慶父といい、その後裔を孟孫氏という。（次兄を）叔牙といい、その後裔を叔孫氏をいう。（末弟を）季友といい、その後裔を季孫氏という。これを三桓といい、代々、国の政権を握った。子班・閔公・僖公・文公・宣公・成公・襄公を経て昭公に至り、（昭公は）季氏を攻めた。三桓は連合して昭公を攻めた。昭公は乾侯に奔走し、亡くなった。}
+
+\sent
+\okuri{弟}{ノ}\furi{定}{てい}\furi{公}{こう}\okuri{立}{ツ}(。)
+\ni{以}{テ}\furi{孔}{こう}\ichi[し]{子}{ヲ}\ni{為}{ス}\footnote{\nw{中都宰}中都は，現 山東省\UTF{6C76}上県の邑。宰は邑長。}\chuuskip\furi{中}{ちゅう}\okuri[と]{都}{ノ}\ichi{宰}{ト}(。)
+一\okuri{年}{ニシテ}四方皆\re{則}{トス}\okuri{之}{ヲ}(。)
+\ni{由}{リ}中\ichi{都}{}\ni{為}{リ}\footnote{\nw{司空}土木水利などを掌る大臣。}\chuuskip\furi{司}{し}\ichi[くう]{空}{ト}(、)\okuri{進}{ミテ}\ni{為}{ル}\footnote{\nw{大司寇}司法警察のことを掌る大臣。}\chuuskip\furi{大}{たい}\furi{司}{し}\ichi[こう]{寇}{ト}(。)
+\ni[たす]{相}{ケテ}定\ichi{公}{ヲ}\ni{会}{フ}斉\okuri{侯}{ニ}于\footnote{\nw{夾谷}現 江蘇省\UTF{8D1B}楡県の西か。}\chuuskip\furi{夾}{きょう}\ichi[こく]{谷}{ニ}(。)
+孔子\okuri{曰}{ハク}(、)
+「\ni{有}{ル}\footnote{\nw{文事}学問・教育・芸術などに関する事柄。}文\ichi{事}{}\okuri{者}{ハ}\okuri{必}{ズ}\ni{有}{リ}武\ichi{備}{}(。)
+\okuri{請}{フ}\ni[そな]{具}{ヘテ}\chuuskip\footnote{\nw{左右司馬}親衛の武官。}左\okuri{右}{ノ}司\ichi{馬}{ヲ}\okuri{以}{テ}\okuri{従}{ヘンコトヲ}(。」)
+\okuri{既}{ニシテ}\okuri{会}{ス}(。)
+\okuri{斉}{ノ}\chuuskip\footnote{\nw{有司}役人。官吏。}有司\re{請}{フ}\ni{奏}{スヲ}\chuuskip\footnote{\nw{四方}中国以外の四方のえびす。}四方之\ichi{楽}{ヲ}(。)
+\re{於}{イテ}\okuri{是}{ニ}\furi{旗}{き}\furi{旄}{ぼう}\furi{剣}{けん}\furi{戟}{げき}(、)\footnote{\nw{鼓譟}太鼓を鳴らして囃し立てる。}\chuuskip\furi{鼓}{こ}\okuri[そう]{譟}{シテ}而\okuri{至}{ル}(。)
+孔子\okuri[はし]{趨}{リテ}而\okuri{進}{ミテ}\okuri{曰}{ハク}(、)
+「\okuri{吾}{ガ}両君\re{為}{スニ}\okuri[よしみ]{好}{ヲ}(、)夷狄之楽、\furi{何}{なん}\okuri[す]{為}{レゾ}\re{於}{イテスルト}\okuri[ここ]{此}{ニ}(。」)
+\okuri{斉}{ノ}景公\okuri{心}{ニ}\okuri[は]{\UTF{600D}}{ヂテ}\re[さしまね]{麾}{ク}\okuri{之}{ヲ}(。)
+\okuri{斉}{ノ}有司\re{請}{フ}\ni{奏}{スヲ}宮中之\ichi{楽}{ヲ}(。)
+優倡\footnote{\nw{侏儒}体の小さい人。また、役者。俳優。古代の劇は体の小さい人が重要な役者であったことによる。}侏儒\okuri{戯}{レテ}而\okuri[すす]{前}{ム}(。)
+孔子\okuri{趨}{リテ}而\okuri{進}{ミテ}\okuri{曰}{ハク}(、)
+「匹\okuri{夫}{ノ}\chuuskip\footnote{\nw{\UTF{7192}惑}惑わす。}\chuuskip\NI[けい]{\UTF{7192}}{}\okuri[わく]{惑}{スル}諸\ichi{侯}{ヲ}\okuri{者}{ハ}(、)\okuri{罪}{アリテ}\re{当}{ニ}<シ>\okuri{誅}{ス}(。)
+\okuri{請}{フ}\ni{命}{ジテ}有\ichi{司}{ニ}\re{加}{ヘント}\okuri{法}{ヲ}焉。」
+首足\re{異}{ニス}\okuri[ところ]{処}{ヲ}(。)
+景公\okuri{懼}{ル}(。)
+\okuri{帰}{リテ}\ni[つ]{語}{ゲテ}\okuri{其}{ノ}\ichi{臣}{ニ}\okuri{曰}{ハク}(、)
+「\okuri{魯}{ハ}\ni{以}{テ}君子之\ichi{道}{ヲ}\ni{輔}{ク}\okuri{其}{ノ}\ichi{君}{ヲ}(。)
+\okuri{而}{ルニ}\okuri[し]{子}{ハ}\okuri{独}{リ}\ni{以}{テ}夷狄之\ichi{道}{ヲ}\ni{教}{フト}寡\ichi{人}{ニ}(。」)
+\re{於}{イテ}\okuri{是}{ニ}斉人\okuri{乃}{チ}\ni{帰}{シ}\re{所}{ノ}\okuri{侵}{ス}\okuri{魯}{ノ}\chuuskip\footnote{\nw{\UTF{9106}・\UTF{6C76}陽・亀陰}\UTF{6C76}陽を指す。現 山東省泰安市肥城市。}\chuuskip\furi{\UTF{9106}}{うん}・\furi{\UTF{6C76}}{ぶん}\furi{陽}{よう}・\furi{亀}{き}\furi{陰}{いん}之\ichi{地}{ヲ}(、)\okuri{以}{テ}\re{謝}{ス}\okuri{魯}{ニ}(。)
+
+\yaku{（昭公の）弟の定公が君主となった。孔子を中都という邑の邑長にすると、一年もすると各地の諸侯はみな孔子を手本とするようになった。孔子は中都の邑長から司空となり、さらに昇進して大司寇となった。（ある日、）孔子は定公を補佐して夾谷で斉侯（景公）に会った。孔子は、「学問や教育に長けたものなら武芸の備えをするものだ。どうか親衛の武官を随行させて従えてください。」と言った。こうして会見した。斉の役人が四方のえびすの音楽を奏でたいと申し出た。そういうわけで（楽人が）戦旗や剣に矛を持ち太鼓を鳴らして囃し立てて出てきた。孔子は駆け寄り、「私たち両国の君主が交誼を結ぶというのに、異民族の音楽を奏でるとは、どうしてこのようなことをなさるのか。」と進言した。斉の景公は決まりが悪く思い、楽人を退けた。（今度は）斉の役人が宮中の音楽を奏でたいと申し出た。滑稽劇の俳優らが滑稽を演じながら出てきた。孔子は駆け寄り、「卑しい男が諸侯を惑わすというのは、誅殺されるべきことだ。どうか彼らに罰を与えるよう役人に命じてください。」と進言した。俳優らは四肢を切断された。斉の景公は恐懼し、斉に帰ってその役人に「魯は君子の道で君主を補佐している。しかしながらおまえは\textred{彼と違って？}夷狄の道で私を教導している。」と告げた。これを受けて斉の人は侵略していた魯の\UTF{9106}・\UTF{6C76}陽・亀陰を返還し、魯に謝った。}
+
+\sent
+孔子\ni{言}{ヒ}於定\ichi{公}{ニ}(、)\shita{将}{ニ}\ni[こぼ]{堕}{チテ}\chuuskip\footnote{\nw{三都}三桓の邑のこと。\UTF{90C8}（現 山東省東平県東南部）、費（現 山東省魚台県西南部）、成（現 山東省寧陽県東北部）。}三\ichi{都}{ヲ}\okuri{以}{テ}\naka{強}{クセント}公\ue{室}{ヲ}(。)
+叔孫氏\okuri{先}{ヅ}\re{堕}{チ}\okuri[こう]{\UTF{90C8}}{ヲ}(、)季氏\re{堕}{ツ}\okuri[ひ]{費}{ヲ}(。)
+孟氏之臣、\re{不}{}\re[がへ]{肯}{ンゼ}\re{堕}{ツヲ}\okuri[せい]{成}{ヲ}(。)
+\re{囲}{フモ}\okuri{之}{ヲ}\re{弗}{}\okuri{克}{タ}(。)
+孔子\ni{由}{リ}大司\ichi{寇}{タルニ}(、)\NI{摂}{}\okuri{行}{ス}\okuri{相}{ノ}\ichi{事}{ヲ}(。)
+七\okuri{日}{ニシテ}而\ni{誅}{ス}\re{乱}{シシ}\okuri{政}{ヲ}大\okuri{夫}{ノ}\furi{少}{しょう}\furi{正}{せい}\ichi[ぼう]{卯}{ヲ}(。)
+\okuri{居}{ルコト}三\okuri{月}{ニシテ}魯\okuri{大}{イニ}\okuri{治}{マル}(。)
+斉人\re{聞}{キテ}\okuri{之}{ヲ}\okuri{懼}{レ}(、)\okuri{乃}{チ}\ni[おく]{帰}{ル}女\okuri{楽}{ヲ}於\ichi{魯}{ニ}(。)
+\furi{季}{き}\furi{桓}{かん}\furi{子}{し}\re{受}{ケ}\okuri{之}{ヲ}\re{不}{}\re{聴}{カ}\okuri{政}{ヲ}(。)
+\footnote{\nw{郊}郊祭。}\okuri{郊}{シテ}又\re{不}{}\ni{致}{サ}\footnote{\nw{膰俎}神に供えるために台の上に置いた肉。祭りが終わると人々に分け与える。}\chuuskip\furi{膰}{はん}\okuri[そ]{俎}{ヲ}於大\ichi{夫}{ニ}(。)
+孔子\okuri{遂}{ニ}\re{去}{ル}\okuri{魯}{ヲ}(。)
+
+\yaku{定公は孔子の進言により、三桓の治めていた邑を破壊させて公家の力を強めようとした。叔孫氏がまず\UTF{90C8}を破壊し、続いて季氏が費を破壊した。孟氏は成を破壊することを認めなかった。（定公が）成を包囲するも勝たなかった。孔子は大司寇であったことから宰相の管理もかわりに行っていた。七日で政治を乱していた大夫の少正卯を誅殺した。三ヶ月もいるうちに魯は十分に治まるようになった。斉の人はこのことを耳にして恐れ、女楽を魯に贈った。季桓子はこれを受け取ると、政治に関することを放り出した。その上、郊祭のときの礼儀である膰俎の分配を大夫によこさない（という乱れようであった）。遂に孔子は魯を去った。}
+
+\sent
+定公\okuri{卒}{シ}(、)\okuri{子}{ノ}\furi{哀}{あい}\furi{公}{こう}\okuri{立}{ツ}(。)
+\san{欲}{ス}\re{以}{テ}\okuri{越}{ヲ}\ni{伐}{タント}三\ichi{桓}{ヲ}(。)
+\re{不}{}\okuri{克}{タ}(。)
+\ni{歴}{テ}\furi{悼}{とう}\furi{公}{こう}・\furi{元}{げん}\ichi[こう]{公}{ヲ}(、)\ni{至}{ル}\furi{繆}{ぼく}\ichi[こう]{公}{ニ}(。)
+\re{知}{ルモ}\ni{尊}{ブヲ}\furi{子}{し}\ichi[し]{思}{ヲ}(、)而\re{不}{}\re{能}{ハ}\okuri{用}{フルコト}(。)
+\ni{歴}{テ}\furi{共}{きょう}\furi{公}{こう}・\furi{康}{こう}\ichi[こう]{公}{ヲ}(、)\ni{至}{ル}\furi{平}{へい}\ichi[こう]{公}{ニ}(。)
+\okuri{嘗}{テ}\re{欲}{スルモ}\ni[あ]{見}{ハント}孟\ichi{子}{ニ}(、)而\re{不}{}\okuri{果}{タサ}(。)
+\ni{歴}{テ}\furi{文}{ぶん}\ichi[こう]{公}{ヲ}(、)\ni{至}{ル}\furi{頃}{けい}\ichi[こう]{公}{ニ}(。)
+\ni{為}{ル}\okuri{楚}{ノ}\furi{考}{こう}\furi{烈}{れつ}\okuri{王}{ノ}\ichire{所}{ト}\okuri{滅}{ボス}(。)
+魯\ni{自}{リ}周\ichi{公}{}\ni{至}{ルマデ}頃\ichi{公}{ニ}(、)\okuri{凡}{テ}三十四\okuri{世}{ナリ}(。)
+
+\yaku{定公が亡くなり、子の哀公が君主となった。越を使って三桓を討伐しようとしたが、できなかった。その後、悼公・元公を経て穆公に至る。彼は子思を尊ぶようになるも政治に登用することはできなかった。さらに、共公・康公（・景公）を経て平公に至る。彼は孟子に会おうとすることがあったが果たせなかった。そして、文公を経て頃公に至る。このとき魯は楚の考烈王に滅ぼされた。魯は周公から頃公に至るまで全部で三十四世であった。}
+
+\newpage
+\appendix
+\section{宋襄の仁}
+
+楚人\re{伐}{チ}\okuri{宋}{ヲ}\okuri{以}{テ}\re{救}{フ}\okuri{鄭}{ヲ}(。)
+宋公\re{将}{ニ}\okuri{戦}{ハント}(。)
+大司馬\okuri{固}{ク}\okuri{諌}{メテ}\okuri{曰}{ハク}(、)
+「天之\re{棄}{ツルヤ}\okuri{商}{ヲ}\okuri{久}{シ}矣。
+君\re{将}{ニ}\re{興}{サント}\okuri{\textcolor{green!50!black}{之}}{ヲ}(。)
+\re{弗}{ル}\re{可}{カラ}\okuri[ゆる]{赦}{サル}也\okuri{已}{ト}(。)」
+\re{弗}{}\okuri{聴}{カ}(。)
+\ni[と]{及}{}楚\ichi{人}{}\ni{戦}{フ}于\ichi[わう]{泓}{ニ}(。)
+宋人\re[を]{既}{ヘ}\re{成}{シ}\okuri{列}{ヲ}(、)楚人\re{未}{ダ}\re{既}{ヘ}\okuri[わた]{済}{リ}(。)
+司馬\okuri{曰}{ハク}(、)
+「\textcolor{green!50!black}{彼}\okuri{衆}{ク}\textcolor{green!50!black}{我}\okuri{寡}{シ}(。)
+\ni{及}{ビテ}\okuri{其}{ノ}\ichire{未}{ダ}<ルニ>\re{既}{ヘ}\okuri{済}{リ}也、\okuri{請}{フ}\re{撃}{タント}\okuri{之}{ヲ}(。)」
+公\okuri{曰}{ハク}(、)
+「不\okuri{可}{ナリト}(。)」
+\re{既}{ヘテ}\okuri{済}{リ}而\re{未}{ダ}\re{成}{サ}\okuri{列}{ヲ}(。)
+又\okuri{以}{テ}\kasen{\okuri{告}{グ}}。
+公\okuri{曰}{ハク}(、)
+「\re{未}{ダ}<ト>\okuri{可}{ナラ}(。)」
+\re{既}{ハリテ}\okuri[なら]{陳}{ビ}而後\re{撃}{ツ}\okuri{之}{ヲ}(。)
+宋師敗\okuri{績}{シ}(、)公\re{傷}{ツキ}\okuri{股}{ヲ}(、)門官\okuri[つ]{殲}{ク}焉。
+国人皆\re[とが]{咎}{ム}\okuri{公}{ヲ}(。)
+公\okuri{曰}{ハク}(、)
+「\kasen{君子\re{不}{}\re{重}{ネ}\okuri{傷}{ヲ}}、\re{不}{}\ni[とりこ]{禽}{ニセ}二\ichi{毛}{ヲ}(。)
+古之\re{為}{ス}\okuri{軍}{ヲ}也、\re{不}{ル}\ni{以}{テセ}\okuri[そ]{阻}{}\ichi[あい]{隘}{ヲ}也。
+寡人\ni{\textcolor{blue}{雖}}{}亡国之\ichi{余}{ト}(、)\re{不}{ト}\re[う]{鼓}{タ}\re{不}{ルニ}\re{成}{サ}\okuri{列}{ヲ}(。)」
+子魚\okuri{曰}{ハク}(、)
+「君\re{未}{ダ}\re{知}{ラ}\okuri{戦}{ヲ}(。)
+\okuri[けい]{勍}{}敵之人、\okuri{隘}{ニシテ}而\re{不}{ルハ}\okuri[なら]{列}{バ}(、)天\re[たす]{賛}{クル}\okuri{我}{ヲ}也。
+\kasen{\okuri{阻}{ニシテ}而\re{鼓}{ツ}\okuri{之}{ニ}(、)\ni{不}{}亦\ichi{可}{ナラ}乎}。
+\okuri{猶}{ホ}\re{有}{リ}\okuri[おそ]{懼}{レ}焉。
+\okuri{且}{ツ}今之\okuri[つよ]{勍}{キ}\okuri{者}{ハ}(、)皆\okuri{吾}{ガ}敵也。
+\re{雖}{}\ni{及}{ブト}胡\ichi[こう]{\kern0.1zw\raisebox{-0.5zw}{\rotatebox{90}{\includegraphics[clip,width=1zw]{kou.pdf}}}}{ニ}(、)\okuri{獲}{レバ}\okuri{則}{チ}\re{取}{ラン}\okuri{之}{ヲ}(、)\okuri{何}{カ}\ni{有}{ランヤ}於二\ichi{毛}{ニ}(。)
+\re{明}{ニシ}\okuri{恥}{ヲ}\re{教}{フルハ}\okuri{戦}{ヲ}(、)\re{求}{ムル}\re{殺}{スヲ}\okuri{敵}{ヲ}也。
+\okuri{傷}{ツキテ}\re{未}{ダ}<レバ>\re{及}{バ}\okuri{死}{ニ}(、)\kasen{如何\re{勿}{}重}。
+\textcolor{blue}{若}\re[を]{愛}{シメバ}\re{重}{ヌルヲ}\okuri{傷}{ヲ}(、)\okuri{則}{チ}\re[し]{如}{カンヤ}\re{勿}{キニ}\okuri{傷}{ツクル}(。)
+\ni{愛}{シメバ}\okuri{其}{ノ}二\ichi{毛}{ヲ}(、)\okuri{則}{チ}\re{如}{カンヤト}\okuri{服}{スルニ}焉。」
+
+\begin{flushright}{\small 『春秋左氏伝』 僖公 僖公二十二年}\end{flushright}
+
+\sukima
+\noindent 注\vspace{-\baselineskip}
+\begin{quote}\small{
+\nw{大司馬・司馬}司令長官の子魚のこと。\par
+\nw{商}殷王朝の子孫の国である宋のこと。\par
+\nw{泓}川の名。\par
+\nw{宋師}宋の軍隊。\par
+\nw{門官}近衛兵。君主の左右を守る官。\par
+\nw{二毛}白髪まじりの老人。\par
+\nw{勍敵}強敵。\par
+\nw{胡\raisebox{-0.5zw}{\rotatebox{90}{\includegraphics[clip,width=1zw]{kou_gt.pdf}}}}九十歳の老人。
+}\end{quote}
+
+\sukima
+\setstretch{1}
+\midashi{問一\quad}青字にした「雖」と「若」の読みを、平仮名ばかりで答えよ。
+\par\vspace{0.5\baselineskip}
+\midashi{問二\quad}緑字にした「之」と「彼」と「我」は、それぞれ何を指すか。文中の語で答えよ。
+\par\vspace{0.5\baselineskip}
+\midashi{問三\quad}五行目の傍線部「告」とあるが、何を告げたのか。二十五字以内で答えよ。
+\par\vspace{0.5\baselineskip}
+\midashi{問四\quad}十行目の傍線部「阻而\re{鼓}{}之、\ni{不}{}亦\ichi{可}{}乎」とはどういう意味か。次のイ$\sim$ホのうちから最も適当なものを一つ選べ。
+\begin{itemize}
+	\item[イ]\quad 戦況が自軍に不利な際に太鼓をたたいて士気を鼓舞することは、得策であろう。
+	\item[ロ]\quad 敵軍の足場が悪いのにつけ込んで攻撃することは、なんと良策ではないか。
+	\item[ハ]\quad 相手の虚をついてうちやぶるのは、正しい戦い方とはいえないのではないか。
+	\item[ニ]\quad 身動きのとりにくい土地で戦いをすることは、出来るだけ避けるべきであろう。
+	\item[ホ]\quad 敵軍をけわしい場所に追い込んで攻めたてるのも、よい作戦かもしれない。
+\end{itemize}
+\par\vspace{0.5\baselineskip}
+\midashi{問五\quad}十三行目の傍線部「如何\re{勿}{}重」の読み方として最も適当なものを、次のイ$\sim$ホのうちから一つ選べ。
+\begin{itemize}
+	\item[イ]\quad いかんせんかさぬるなかれ。
+	\item[ロ]\quad いかんせんかさぬるなからん。
+	\item[ハ]\quad いかんぞかさぬるなかれ。
+	\item[ニ]\quad いかんぞかさぬるなからん。
+	\item[ホ]\quad いかんしてかさぬるなきや。
+\end{itemize}
+\par\vspace{0.5\baselineskip}
+\midashi{問六\quad}七行目の傍線部「君子\re{不}{}\re{重}{}傷」という発言に対して、子魚はどのような論理で批判しているのか。六十字以内で答えよ。
+
+\vfill
+
+\begin{thebibliography}{9}
+\bibitem{kanbuntaikei}林秀一．新釈漢文大系 第\rensuji{20}巻 十八史略（上）．第\rensuji{2}版，明治書院，一九六七．
+\bibitem{kawaikanbun}河合塾国語科．入試精選問題集\rensuji{9} --改訂版-- 漢文．第\rensuji{3}版，河合出版，二〇一四．
+\end{thebibliography}
+
+\end{document}

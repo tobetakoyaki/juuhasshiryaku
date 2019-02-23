@@ -6,5 +6,6 @@
 *.log
 *.toc
 *.synctex.gz
-SongAndLu.tex
+*.xbb
+.DS_Store
 ConfuciusWeyZheng.tex
